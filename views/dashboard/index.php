@@ -1,4 +1,10 @@
+<?php
 
+if(!isset($_SESSION["user"])){
+    header("Location: ../login") ;
+}
+
+?>
 <?php require_once VIEWS."templets/header.php" ?>
 <!-- <form action="./library/employeeController.php" method="POST" enctype="multipart/form-data">
  --><table class="table">
@@ -16,7 +22,7 @@
       <th scope="col">Postal Code</th>
       <th scope="col">Phone Number</th>
       <th scope="col"><button type="button" id="add" class="binImg" data-bs-toggle="modal" data-bs-target="#exampleModal">
-<img src="https://static.vecteezy.com/system/resources/previews/000/583/100/original/vector-button-plus-icon.jpg">
+<!-- <img src="https://static.vecteezy.com/system/resources/previews/000/583/100/original/vector-button-plus-icon.jpg"> -->
 </button></th>
     </tr>
     </thead>

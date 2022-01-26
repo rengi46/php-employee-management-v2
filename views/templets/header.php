@@ -1,8 +1,3 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +23,7 @@
                 </ol>
                 </nav>
                 <div class="d-flex align-items-center">
-                <button type="button" class="btn btn-link"><a class="link-warning" href="./library/loginController.php?Logout">LogOut</a></button>
+                <button type="button" class="btn btn-link"><a class="link-warning" href="../login/logout?exit=true">LogOut</a></button>
                 </div>
             </div>
         </nav>
