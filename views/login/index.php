@@ -19,6 +19,7 @@ if(isset($_SESSION["user"]) && !$_GET["exit"]){
 </head>
 <body>
 <form action="<?= BASE_URL ?>login/singin" method="post">
+<!-- <?= BASE_URL ?> -->
 <section class="vh-100" style="background-color: #6a6a6a;">
 <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">

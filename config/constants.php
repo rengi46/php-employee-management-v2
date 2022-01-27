@@ -16,3 +16,6 @@ define("RESOURCES", BASE_PATH . '/resources/');
 
 //RESOURCES
 define("CSS", BASE_URL . 'assets/css/');
+
+//RESOURCES
+define("JS", BASE_URL . 'assets/js/');

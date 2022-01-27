@@ -7,29 +7,7 @@ class employeeModel extends model{
 
     public function insert($data){
         $query = $this->db->conect()->prepare('INSERT INTO employee 
-        (
-            name,
-            lastName,
-            email,
-            gender,
-            city,
-            streetAddress,
-            state,
-            age,
-            postalCode,
-            phoneNumber
-        ) VALUES (
-            :name,
-            :lastName,
-            :email,
-            :gender,
-            :city,
-            :streetAddress,
-            :state,
-            :age,
-            :postalCode,
-            :phoneNumber
-        )');
+        (name,lastName,email,gender,city,streetAddress,state,age,postalCode,phoneNumber) VALUES (:name,:lastName,:email,:gender,:city,:streetAddress,:state,:age,:postalCode,:phoneNumber)');
         $query->execute(
             [
             "name"          => $data["name"],
@@ -45,5 +23,14 @@ class employeeModel extends model{
             ]
         );
         //echo "insertar datos";
+    }
+
+    public function getAll(){
+        $query = $this->db->conect()->prepare("SELECT * FROM employee");
+        $query->execute();
+        return $query->fetchAll();
+    }
+    public function getUser($id){
+        
     }
 }

@@ -12,6 +12,10 @@ class employee extends controller{
     }
 
     function getEmployees(){
+        echo json_encode($this->model->getAll()) ;
+    }
+
+    function getEmployee(){
         $this->view->render("employees/index");
     }
 

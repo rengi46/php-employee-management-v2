@@ -29,7 +29,7 @@ class Database{
             return $pdo;
         }
         catch (PDOEXception $e){
-            require_once(VIEWS . "/error/error.php");
+            require_once(VIEWS . "error/error.php");
         }
     }
 }

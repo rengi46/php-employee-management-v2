@@ -8,6 +8,7 @@
     }
 
     function singin(){
+        echo "entra en login";
         $getuser = $this->model->getUser();
 
         foreach($getuser as $user){
