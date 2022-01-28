@@ -20,6 +20,7 @@ class employee extends controller{
     }
 
     function getEmployee($id){
+        $this->nullID($id);
         $employe=($this->model->getById($id[0])) ;
         $this->view->employe=$employe;
         $this->view->render("employees/employe");
@@ -55,6 +56,7 @@ class employee extends controller{
         $this->view->render("dashboard/index");
     }
     function modifyEmployee($id){
+        $this->nullID($id);
         $name           = $_POST["name"];
         $lastName       = $_POST["lastName"];
         $email          = $_POST["email"];
@@ -81,12 +83,19 @@ class employee extends controller{
             ]
         );
         echo "employee actualizado";
-        // $this->view->render("dashboard/index");
         header("location: ../render");
     }
 
     function deleteemployee($id){
+        $this->nullID($id);
         $this->model->delete($id[0]);
         return "true";
+    }
+
+    function nullID($id)
+    {
+        if($id === ""){
+            header("location: ../error?msg=Invalid Parameters");
+        }
     }
 }
