@@ -21,8 +21,8 @@
                 </a>
                 <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item" id="dashPage"><a href="render">Dashboard</a> </li>
-                    <li class="breadcrumb-item" id="employeesPage"><a href="getEmployees">Employees</a></li>
+                    <li class="breadcrumb-item" id="dashPage"><a href="<?= BASE_URL ?>employee/render">Dashboard</a> </li>
+                    <li class="breadcrumb-item" id="employeesPage"><a href="<?= BASE_URL ?>employee/render2">Employees</a></li>
                 </ol>
                 </nav>
                 <div class="d-flex align-items-center">
