@@ -92,10 +92,41 @@ class employee extends controller{
         return "true";
     }
 
-    function nullID($id)
+    function nullID($data)
     {
-        if($id === ""){
-            header("location: ../error?msg=Invalid Parameters");
+        if($data[0]!= ""){
+        $id=intval($data[0]);
+            if($id != 0){
+                $existe=$this->exist("id",$id);
+                if($existe){
+                }
+                else{
+                    echo "no existe";
+                    header("location: ../error?msg=This id no exist");
+                }
+            }else{
+                echo "mas alla";
+                header("location: ../error?msg=Invalid Parameters");
+            }
+        }
+        else{
+            echo "mucho mas alla";
+            header("location: ../error?msg=No Parameters");
+        }
+    }
+
+    function exist($colum,$value){
+        $a=0;
+        $todo= $this->model->getAll();
+        foreach($todo as $one){
+            if($one[$colum] == $value){
+                $a=1;
+            }
+        }
+        if($a==1){
+            return true;
+        }else{
+            return false;
         }
     }
 }
