@@ -101,16 +101,13 @@ class employee extends controller{
                 if($existe){
                 }
                 else{
-                    echo "no existe";
                     header("location: ../error?msg=This id no exist");
                 }
             }else{
-                echo "mas alla";
                 header("location: ../error?msg=Invalid Parameters");
             }
         }
         else{
-            echo "mucho mas alla";
             header("location: ../error?msg=No Parameters");
         }
     }
@@ -128,5 +125,12 @@ class employee extends controller{
         }else{
             return false;
         }
+    }
+
+    
+    function timeOut(){
+        echo $_SESSION["time"];
+        echo "<br>";
+        echo time();
     }
 }

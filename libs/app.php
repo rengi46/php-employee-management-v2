@@ -21,7 +21,7 @@ class app{
         $archivosController = "controllers/". $url[0].".php";
         if ( file_exists($archivosController)){
             require_once $archivosController;
-            if(method_exists($url[0], $url[1])){
+            if(method_exists($url[0], $url[1])|| $url[0]=="login"){
                 $controller = new $url[0];
                 $controller->loadModel($url[0]);
                 $nparam=sizeof($url);
@@ -40,10 +40,8 @@ class app{
                         else{
                             $controller->{$url[1]}("");
                         }
-                    } 
-                
-                
-            } else{
+                    }
+            } else{ 
                 require_once "controllers/errors.php";
                 $controller= new errors("Function Not Found");
             }
